@@ -1,0 +1,14 @@
+{
+  "name": "uk-farm-safety-mcp",
+  "display_name": "UK Farm Safety",
+  "description": "UK farm health and safety guidance via MCP -- HSE machinery safety, livestock handling, COSHH, children on farms, RIDDOR reporting",
+  "vendor": "Ansvar Systems",
+  "vendor_url": "https://ansvar.eu",
+  "source_url": "https://github.com/Ansvar-Systems/uk-farm-safety-mcp",
+  "license": "Apache-2.0",
+  "runtime": "node",
+  "transport": ["stdio", "streamable-http"],
+  "endpoints": {
+    "streamable-http": "https://mcp.ansvar.eu/uk-farm-safety/mcp"
+  }
+}

@@ -1,0 +1,99 @@
+schema_version: "1.0"
+mcp_name: "UK Farm Safety MCP"
+category: "domain_intelligence"
+
+sources:
+  - name: "HSE Agriculture Guidance"
+    authority: "Health and Safety Executive"
+    official_url: "https://www.hse.gov.uk/agriculture/"
+    api_url: null
+    retrieval_method: "SEED_DATA"
+    format: "HTML"
+    authentication: "none"
+    update_frequency: "periodic"
+    license:
+      type: "Open Government Licence"
+      url: "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/"
+      summary: "Free to copy, publish, distribute, and adapt with attribution"
+    coverage:
+      scope: "Machinery safety, livestock handling, working at height, confined spaces, lone working"
+      version: "2024-2025"
+      item_count: "~18 guidance entries"
+    languages:
+      - "en"
+
+  - name: "RIDDOR Regulations"
+    authority: "Health and Safety Executive"
+    official_url: "https://www.hse.gov.uk/riddor/"
+    api_url: null
+    retrieval_method: "SEED_DATA"
+    format: "HTML"
+    authentication: "none"
+    update_frequency: "periodic"
+    license:
+      type: "Open Government Licence"
+      url: "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/"
+      summary: "Free to copy, publish, distribute, and adapt with attribution"
+    coverage:
+      scope: "Incident reporting requirements, deadlines, notification methods, record retention"
+      version: "RIDDOR 2013"
+      item_count: "7 reporting categories"
+    languages:
+      - "en"
+
+  - name: "COSHH in Agriculture"
+    authority: "Health and Safety Executive"
+    official_url: "https://www.hse.gov.uk/agriculture/topics/coshh.htm"
+    api_url: null
+    retrieval_method: "SEED_DATA"
+    format: "HTML"
+    authentication: "none"
+    update_frequency: "periodic"
+    license:
+      type: "Open Government Licence"
+      url: "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/"
+      summary: "Free to copy, publish, distribute, and adapt with attribution"
+    coverage:
+      scope: "Pesticides, sheep dip, veterinary medicines, fuel, ammonia, grain dust, wood preservatives, rodenticides"
+      version: "COSHH 2002"
+      item_count: "8 substance categories"
+    languages:
+      - "en"
+
+  - name: "PUWER (Provision and Use of Work Equipment Regulations)"
+    authority: "Health and Safety Executive"
+    official_url: "https://www.hse.gov.uk/work-equipment-machinery/puwer.htm"
+    api_url: null
+    retrieval_method: "SEED_DATA"
+    format: "HTML"
+    authentication: "none"
+    update_frequency: "periodic"
+    license:
+      type: "Open Government Licence"
+      url: "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/"
+      summary: "Free to copy, publish, distribute, and adapt with attribution"
+    coverage:
+      scope: "Work equipment safety requirements, maintenance, guarding, training"
+      version: "PUWER 1998"
+      item_count: "Referenced across machinery entries"
+    languages:
+      - "en"
+
+  - name: "Farm Safety Foundation (Yellow Wellies)"
+    authority: "Farm Safety Foundation"
+    official_url: "https://www.yellowwellies.org/"
+    api_url: null
+    retrieval_method: "SEED_DATA"
+    format: "HTML"
+    authentication: "none"
+    update_frequency: "periodic"
+    license:
+      type: "Public information"
+      url: "https://www.yellowwellies.org/"
+      summary: "Public safety awareness material"
+    coverage:
+      scope: "Farm safety awareness, young farmer guidance"
+      version: "current"
+      item_count: "Referenced in children on farms rules"
+    languages:
+      - "en"

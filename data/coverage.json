@@ -1,0 +1,12 @@
+{
+  "mcp_name": "UK Farm Safety MCP",
+  "jurisdiction": "GB",
+  "build_date": "2026-04-03",
+  "safety_guidance_machinery": 11,
+  "safety_guidance_livestock": 7,
+  "children_rules": 10,
+  "coshh_guidance": 8,
+  "reporting_requirements": 7,
+  "risk_assessment_templates": 8,
+  "fts_entries": 51
+}
