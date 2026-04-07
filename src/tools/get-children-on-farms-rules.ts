@@ -1,4 +1,5 @@
 import { buildMeta } from '../metadata.js';
+import { buildCitation } from '../citation.js';
 import { validateJurisdiction } from '../jurisdiction.js';
 import type { Database } from '../db.js';
 
@@ -43,5 +44,12 @@ export function handleGetChildrenOnFarmsRules(db: Database, args: ChildrenArgs) 
       regulation_ref: r.regulation_ref,
     })),
     _meta: buildMeta(),
+    _citation: buildCitation(
+      `UK Children on Farms: ${args.age_group ?? 'all ages'}`,
+      `Children on farms rules (${jv.jurisdiction})`,
+      'get_children_on_farms_rules',
+      { ...(args.age_group ? { age_group: args.age_group } : {}), ...(args.activity ? { activity: args.activity } : {}) },
+      'https://www.hse.gov.uk/agriculture/topics/children.htm',
+    ),
   };
 }

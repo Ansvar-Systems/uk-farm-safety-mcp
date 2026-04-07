@@ -1,4 +1,5 @@
 import { buildMeta } from '../metadata.js';
+import { buildCitation } from '../citation.js';
 import { validateJurisdiction } from '../jurisdiction.js';
 import type { Database } from '../db.js';
 
@@ -40,5 +41,12 @@ export function handleGetRiskAssessmentTemplate(db: Database, args: RiskAssessme
       review_frequency: r.review_frequency,
     })),
     _meta: buildMeta(),
+    _citation: buildCitation(
+      `UK Risk Assessment: ${args.activity}`,
+      `Risk assessment template for ${args.activity} (${jv.jurisdiction})`,
+      'get_risk_assessment_template',
+      { activity: args.activity },
+      'https://www.hse.gov.uk/agriculture/topics/risk-assessment.htm',
+    ),
   };
 }

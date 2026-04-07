@@ -1,4 +1,5 @@
 import { buildMeta } from '../metadata.js';
+import { buildCitation } from '../citation.js';
 import { validateJurisdiction } from '../jurisdiction.js';
 import type { Database } from '../db.js';
 
@@ -49,5 +50,12 @@ export function handleGetMachinerySafety(db: Database, args: MachineryArgs) {
       regulation_ref: r.regulation_ref,
     })),
     _meta: buildMeta(),
+    _citation: buildCitation(
+      `UK Machinery Safety: ${args.machine_type}`,
+      `Machinery safety guidance for ${args.machine_type} (${jv.jurisdiction})`,
+      'get_machinery_safety',
+      { machine_type: args.machine_type, ...(args.activity ? { activity: args.activity } : {}) },
+      'https://www.hse.gov.uk/agriculture/topics/machinery.htm',
+    ),
   };
 }

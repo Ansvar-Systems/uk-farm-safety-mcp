@@ -1,4 +1,5 @@
 import { buildMeta } from '../metadata.js';
+import { buildCitation } from '../citation.js';
 import { validateJurisdiction } from '../jurisdiction.js';
 import type { Database } from '../db.js';
 
@@ -43,5 +44,12 @@ export function handleGetReportingRequirements(db: Database, args: ReportingArgs
       regulation_ref: r.regulation_ref,
     })),
     _meta: buildMeta(),
+    _citation: buildCitation(
+      `UK RIDDOR: ${args.incident_type}`,
+      `Reporting requirements for ${args.incident_type} (${jv.jurisdiction})`,
+      'get_reporting_requirements',
+      { incident_type: args.incident_type },
+      'https://www.hse.gov.uk/riddor/',
+    ),
   };
 }

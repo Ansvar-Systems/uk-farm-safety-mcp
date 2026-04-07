@@ -1,4 +1,5 @@
 import { buildMeta } from '../metadata.js';
+import { buildCitation } from '../citation.js';
 import { validateJurisdiction } from '../jurisdiction.js';
 import type { Database } from '../db.js';
 
@@ -49,5 +50,12 @@ export function handleGetLivestockHandlingSafety(db: Database, args: LivestockAr
       regulation_ref: r.regulation_ref,
     })),
     _meta: buildMeta(),
+    _citation: buildCitation(
+      `UK Livestock Safety: ${args.species}`,
+      `Livestock handling safety for ${args.species} (${jv.jurisdiction})`,
+      'get_livestock_handling_safety',
+      { species: args.species, ...(args.activity ? { activity: args.activity } : {}) },
+      'https://www.hse.gov.uk/agriculture/topics/livestock.htm',
+    ),
   };
 }
